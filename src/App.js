@@ -1,16 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Title from './componets/Tittle/Tittle';
+import ItemListContainer from './componets/ItemListContainer/ItemListContainer';
+import NavBar from './componets/NavBar/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          HOLLAAAAA MUNDO 
-        </p>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <div>
+        <Title/>
+        <ItemListContainer />
+      </div>
+
+    </>
   );
 }
 
