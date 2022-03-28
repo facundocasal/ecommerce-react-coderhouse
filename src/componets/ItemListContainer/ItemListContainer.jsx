@@ -1,5 +1,4 @@
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import {Button , Card } from 'react-bootstrap';
 
 
 export default function ItemListContainer() {
