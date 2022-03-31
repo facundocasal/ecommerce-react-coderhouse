@@ -1,7 +1,7 @@
 import './App.css';
-import Title from './componets/Tittle/Tittle';
-import ItemListContainer from './componets/ItemListContainer/ItemListContainer';
-import NavBar from './componets/NavBar/Navbar';
+import Tittle from './components/Tittle/Tittle';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <NavBar />
       <div>
-        <Title/>
+        <Tittle texto={"catalogo"}/>
         <ItemListContainer />
       </div>
 
