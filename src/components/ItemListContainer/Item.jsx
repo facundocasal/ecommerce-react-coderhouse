@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 
 export default function Item ( prod )  {
 
-    const [existente , setexistente] = useState(prod.stock)
+    let [disponible , setexistente] = useState(prod.stock)
 
     let onAdd = (num) =>{
         alert("usted compro " + num)
-        setexistente(prod.stock - num)
+        disponible = (setexistente(prod.stock - num))
         }
     
 
@@ -22,7 +22,7 @@ export default function Item ( prod )  {
           <p className="Item-description"><strong>Description:</strong> <br /> {prod.description}</p>
           
         </div>
-        <ItemCount initial={0} stock={prod.stock} onAdd={onAdd} existente={existente} />
+        <ItemCount initial={0} stock={prod.stock} onAdd={onAdd} existente={disponible} />
       </div>
 
     );
