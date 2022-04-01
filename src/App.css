@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.ItemList{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.imgItem{
+  width: 250px;
+  height: 250px;
+
+}
+.add{
+  display: flex;
+}
+
+.Item-title{
+  text-align: center;
+  text-transform: uppercase;
+}

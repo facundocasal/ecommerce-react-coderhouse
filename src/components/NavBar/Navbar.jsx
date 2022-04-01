@@ -15,10 +15,8 @@ export default function NavBar() {
                         <Nav.Link href="#nosotros">Nosotros</Nav.Link>
                         <Nav.Link href="#dondeEstamos">Donde Estamos</Nav.Link>
                     </Nav>
-                </Navbar.Collapse>
-                    
+                </Navbar.Collapse>       
             </Container>
-            
         </Navbar>
     )
 }
