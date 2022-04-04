@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-function ItemCount( { initial ,stock, onAdd , existente  }) {
+function ItemCount( { initial ,stock, onAdd , exist  }) {
   
-    const [numero , setNumero] = useState(initial)
+    const [number , setnumber] = useState(initial)
 
   
     return (
@@ -10,23 +10,23 @@ function ItemCount( { initial ,stock, onAdd , existente  }) {
         <div className='add'>
 
             <button onClick={()=>{
-                    if (numero > 0){
-                    setNumero(numero - 1)}
+                    if (number > 0){
+                    setnumber(number - 1)}
                 }}>-</button>
 
-            <p>{numero}</p>
+            <p>{number}</p>
 
 
             <button onClick={()=>{
-                    setNumero(numero + 1)
+                    setnumber(number + 1)
                 }}>+</button>
         </div>
         <div>
 
         </div>
-            <p>stock disponible {existente}</p>
+            <p>stock disponible {exist}</p>
         <div>
-            <button disabled={ numero === 0} onClick={( numero > stock?null:( ()=> onAdd(numero)))}>Agregar Al Carrito</button>
+            <button disabled={number === 0} onClick={( number > stock?null:( ()=> onAdd(number)))}>Agregar Al Carrito</button>
         </div>
     </div>
   )
