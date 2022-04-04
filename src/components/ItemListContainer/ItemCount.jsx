@@ -26,7 +26,7 @@ function ItemCount( { initial ,stock, onAdd , existente  }) {
         </div>
             <p>stock disponible {existente}</p>
         <div>
-            <button onClick={(numero===0|| numero > stock?null:( ()=> onAdd(numero)))}>Agregar Al Carrito</button>
+            <button disabled={ numero === 0} onClick={( numero > stock?null:( ()=> onAdd(numero)))}>Agregar Al Carrito</button>
         </div>
     </div>
   )
