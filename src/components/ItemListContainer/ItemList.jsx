@@ -10,13 +10,13 @@ function ItemList({products}) {
     <div className='ItemList'>
 
         {
-        products.map((auto) => 
+        products.map((car) => 
                     <Item 
-                    key={auto.id}
-                    name={auto.name}
-                    img={auto.img}
-                    stock={auto.stock}
-                    description={auto.description}
+                    key={car.id}
+                    name={car.name}
+                    img={car.img}
+                    stock={car.stock}
+                    description={car.description}
                     />         
             )}
     </div>
