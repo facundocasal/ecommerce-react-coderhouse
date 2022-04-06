@@ -1,13 +1,13 @@
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import React, { useState } from 'react';
 
 export default function Item ( prod )  {
 
-    let [available , setAvailable] = useState(prod.stock)
+    let [exist , setExist] = useState(prod.stock)
 
     let onAdd = (num) =>{
         alert("usted compro " + num)
-        available = (setAvailable(prod.stock - num))
+        exist = (setExist(prod.stock - num))
         }
     
 
@@ -22,7 +22,7 @@ export default function Item ( prod )  {
           <p className="Item-description"><strong>Description:</strong> <br /> {prod.description}</p>
           
         </div>
-        <ItemCount initial={0} stock={prod.stock} onAdd={onAdd} exist={available} />
+        <ItemCount initial={0} stock={prod.stock} onAdd={onAdd} exist={exist} />
       </div>
 
     );

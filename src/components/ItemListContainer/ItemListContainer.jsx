@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import inventary from '../../utils/inventary'
-import ItemList from './ItemList'
+import ItemList from '../ItemList/ItemList'
 
 
 function ItemListContainer() {
 
-  const [arrayProducts, setArrayProducts ] = useState([])
+  const [products, setProducts ] = useState([])
     
   useEffect(()=>{
       // eslint-disable-next-line no-unused-vars
@@ -19,13 +19,13 @@ function ItemListContainer() {
           
         }, 3000);
       })
-      .then(res => setArrayProducts(res))
+      .then(res => setProducts(res))
       .catch(err => console.log("error"))
   },[])
     
     return (
     <div>
-        <ItemList products={arrayProducts}></ItemList>
+        <ItemList products={products}></ItemList>
     </div>
   )
 }
