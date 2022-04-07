@@ -26,9 +26,9 @@ function ItemDetailContainer() {
 
   return (
     <>
-        
-        {loading?(<div style={{display: "flex" , justifyContent:'space-around' , alignItems:"center"}}> <h1> Cargando Detalles Del Producto </h1> <Spinner animation="grow"/></div>):(<ItemDetail item={item}/>)}
-        
+        <div style={{ width: '100%' , height: "90vh", margin:"auto" , display:"flex" ,alignItems: "center" , justifyContent: "center"}}>
+            {loading?(<div style={{display: "flex" , justifyContent:'space-around' , alignItems:"center"}}> <h1> Cargando Detalles Del Producto </h1> <Spinner animation="grow"/></div>):(<ItemDetail item={item}/>)}
+        </div>
     </>
   )
 }

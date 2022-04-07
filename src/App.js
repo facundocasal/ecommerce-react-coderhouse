@@ -8,7 +8,9 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 function App() {
   return (
     <>
-      <NavBar />
+      <div>
+       <NavBar />
+      </div>
       <div>
         {/* <Tittle texto={"catalogo"}/>
         <ItemListContainer /> */}

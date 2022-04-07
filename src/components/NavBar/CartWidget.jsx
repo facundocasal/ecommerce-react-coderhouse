@@ -5,7 +5,7 @@ export default function CartWidget (){
 
     return(
         <>
-            <Nav.Link variant="danger" href="#cart" style={{color:"papayawhip",fontSize: "1.8rem"}}><FaOpencart></FaOpencart></Nav.Link>
+            <Nav.Link variant="danger" href="#cart" style={{color:"papayawhip",fontSize: "1.8rem"}}><FaOpencart></FaOpencart>(0)</Nav.Link>
         </>
     )
 }
