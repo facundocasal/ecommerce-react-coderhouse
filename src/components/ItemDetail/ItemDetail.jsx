@@ -7,12 +7,16 @@ import { Link } from "react-router-dom";
 function ItemDetail({item}) {
 
 
-  let [cart , setCart] = useState(true)
+  let [buttonCart , setButtonCart] = useState(true);
+
+  let [cart , setCart] = useState(0)
 
   let onAdd = (num) =>{
+    setCart(num)
     alert("Se añadieron  " + num + " productos a tu carrito ")
-    setCart(false)
+    setButtonCart(false)
 }
+  console.log(cart)
 
   return (
     <>
@@ -34,7 +38,7 @@ function ItemDetail({item}) {
                     <li>Material:  {i.material}</li>
                   </ul>)}
         </div>
-        {cart?(<ItemCount className="addCart" initial={0} stock={item.stock} onAdd={onAdd} />):<Link className='buttonCart' to={'/Cart'}>Ir al Carrito</Link>}  
+        {buttonCart?(<ItemCount className="addCart" initial={0} stock={item.stock} onAdd={onAdd} />):<Link className='buttonCart' to={'/Cart'}>Ir al Carrito</Link>}  
       </div>  
     </>
   )
