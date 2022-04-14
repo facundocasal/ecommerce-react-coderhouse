@@ -1,4 +1,17 @@
 .add{
     display: flex;
-  }
-  
+    justify-content: space-around;
+}
+.addCart{
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 4px 4px #333;
+    background-color: rgb(65, 227, 227);
+    color: #333;
+    font-size: large;
+    font-weight: 600;
+}
+.addCart:disabled{
+    background-color: dimgray;
+    color: #fff;
+}

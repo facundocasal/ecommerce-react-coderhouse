@@ -34,7 +34,7 @@ function ItemDetail({item}) {
                     <li>Material:  {i.material}</li>
                   </ul>)}
         </div>
-        {cart?(<ItemCount initial={0} stock={item.stock} onAdd={onAdd} />):<Link className='buttonCart' to={'/Cart'}>Ir al Carrito</Link>}  
+        {cart?(<ItemCount className="addCart" initial={0} stock={item.stock} onAdd={onAdd} />):<Link className='buttonCart' to={'/Cart'}>Ir al Carrito</Link>}  
       </div>  
     </>
   )

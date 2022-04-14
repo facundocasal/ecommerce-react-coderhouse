@@ -15,7 +15,17 @@
     padding: 0;
     margin: 0;
 }
-
 .buttonCart{
-    background-color: brown;
+    font-size: larger;
+    color: #333;
+    background-color: greenyellow;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 2px 2px;
+}
+.buttonCart:hover{
+    color: #fff;
+    background-color: seagreen
 }

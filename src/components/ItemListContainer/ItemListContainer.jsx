@@ -35,7 +35,7 @@ function ItemListContainer() {
     return (
     <>
     <Tittle texto={"catalogo"}/>
-    <div style={{ width: '50%' ,padding: "4rem", margin:"auto" , display:"flex" , justifyContent: "center",flexWrap:"wrap"}}>
+    <div style={{ width: '90%' ,padding: "4rem", margin:"auto" , display:"flex" , justifyContent: "center",flexWrap:"wrap"}}>
         {loading?(<div style={{display: "flex" , height:"300px" , alignItems:"center", flexDirection:"column"}}> <h1> Cargando Productos  </h1> <Spinner animation="grow"/></div>):<ItemList products={products}></ItemList>}
     </div>
     </>

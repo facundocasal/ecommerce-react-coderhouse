@@ -10,24 +10,24 @@ function ItemCount( { initial ,stock, onAdd , exist  }) {
     <div>
         <div className='add'>
 
-            <button style={{backgroundColor:"red",color:"wheat" , padding:"1rem"}} onClick={()=>{
+            <button style={{fontWeight:"600" ,backgroundColor:"red",color:"wheat" , padding:"0.8rem"}} onClick={()=>{
                     if (number > 0){
                     setnumber(number - 1)}
                 }}>-</button>
 
-            <p style={{margin:"0 4px" ,backgroundColor:"darkslategrey", color:"wheat",padding:"1rem"}}>{number}</p>
+            <p style={{fontWeight:"600",margin:"0 4px" ,backgroundColor:"darkslategrey", color:"wheat",padding:"0.8rem"}}>{number}</p>
 
 
-            <button style={{backgroundColor:"green", color:"wheat",padding:"1rem"}} onClick={()=>{
+            <button style={{fontWeight:"600", backgroundColor:"green", color:"wheat",padding:"0.8rem"}} onClick={()=>{
                     setnumber(number + 1)
                 }}>+</button>
         </div>
         <div>
 
         </div>
-            <p>stock disponible {stock}</p>
+            <p style={{textAlign:"center"}}>stock disponible {stock}</p>
         <div>
-            <button disabled={number === 0} onClick={( number > stock?null:( ()=> onAdd(number)))}>Agregar Al Carrito</button>
+            <button className="addCart" disabled={number === 0} onClick={( number > stock?null:( ()=> onAdd(number)))}>Agregar Al Carrito</button>
         </div>
     </div>
   )

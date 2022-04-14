@@ -1,6 +1,6 @@
 .ItemList{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 70%;
     justify-content: space-around;
   }

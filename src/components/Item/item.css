@@ -3,7 +3,7 @@
     height: 250px;
   
 }
-.Item-title{
+.item-title{
     text-align: center;
     text-transform: uppercase;
 }
@@ -17,8 +17,18 @@
     font-weight: 600;
     border-radius: 15px;
     box-shadow: 2px 2px;
+    width: 40%;
+    margin: auto;
 }
 .buttonBuy:hover{
     color: #fff;
     background-color: seagreen
+}
+.item-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.item{
+    padding: 1.5rem;
 }

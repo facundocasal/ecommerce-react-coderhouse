@@ -6,10 +6,10 @@ export default function Item ( prod )  {
 
         
     return (
-      <div className="Item">
-        <div className="Item-info">
-          <h2 className="Item-title">{prod.name}</h2>
-          <h3 className="Item-title">{prod.model}</h3>
+      <div className="item">
+        <div className="item-info">
+          <h2 className="item-title">{prod.name}</h2>
+          <h3 className="item-title">{prod.model}</h3>
           <div>
             <img className="imgItem" src={prod.img} alt="logo" />
           </div>
