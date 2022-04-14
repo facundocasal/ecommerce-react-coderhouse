@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import getItem from './getItem'
 import { Spinner } from 'react-bootstrap';
+import inventary from '../../utils/inventary'
 
 function ItemDetailContainer() {
 
@@ -9,25 +10,32 @@ function ItemDetailContainer() {
     
     const [loading , setLoading] = useState(true)
 
+    const {id} = useParams()
+    
+    
 
-    //TERNARIO  number <10? setNumber (number + 1): alert("no se puede ")
+
     useEffect(()=>{
-        let time = 3000
-        let url = "https://api.mercadolibre.com/products/MLA10025564#json"
-        setTimeout(() =>
-        getItem(url)
-        .then(data => setItem(data))
+        // eslint-disable-next-line no-unused-vars
+        let promesa = new Promise ((resolve , reject) =>{
+          setTimeout(() => {
+              // eslint-disable-next-line eqeqeq
+              resolve(inventary.find((element => element.id == id)))
+            
+          }, 1000);
+        })
+        .then(res => setItem(res))
+        .catch(err => console.log("error"))
         .finally(()=>{
-            setLoading(false)   
-        }),time)
+          setLoading(false)
+        })
+    },[id])
 
-
-    },[])
-
+    
   return (
     <>
-        <div style={{ width: '100%' , height: "90vh", margin:"auto" , display:"flex" ,alignItems: "center" , justifyContent: "center"}}>
-            {loading?(<div style={{display: "flex" , justifyContent:'space-around' , alignItems:"center"}}> <h1> Cargando Detalles Del Producto </h1> <Spinner animation="grow"/></div>):(<ItemDetail item={item}/>)}
+        <div style={{ width: '100%' ,padding: "4rem", margin:"auto" , display:"flex" , justifyContent: "center"}}>
+            {loading?(<div style={{display: "flex", height:"300px" , alignItems:"center", flexDirection:"column"}}> <h1> Cargando Detalles Del Producto </h1> <br /> <Spinner animation="grow"/></div>):(<ItemDetail key={item.id} item={item}/>)}
         </div>
     </>
   )

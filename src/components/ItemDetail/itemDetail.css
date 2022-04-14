@@ -1,0 +1,21 @@
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+}
+
+.description{
+    text-align: center;
+
+}
+
+.description__lista{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.buttonCart{
+    background-color: brown;
+}

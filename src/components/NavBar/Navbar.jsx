@@ -1,21 +1,28 @@
 import CartWidget from './CartWidget';
 import {Navbar , Nav , Container} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import './navbar.css';
 
 export default function NavBar() {
+
+    const section = ["bmw", "audi", "nissan", "chevrolet" ]
 
     return (
         <Navbar expand="lg" bg="dark"  variant="dark">
             <Container>
-                <Navbar.Brand href="#home">INICIO</Navbar.Brand>
-                <CartWidget></CartWidget>
-                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#productos">Productos</Nav.Link>
-                        <Nav.Link href="#nosotros">Nosotros</Nav.Link>
-                        <Nav.Link href="#dondeEstamos">Donde Estamos</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>       
+                    <Navbar.Brand><Link to={"/"} className="navLink">Inicio</Link></Navbar.Brand>
+                    <CartWidget></CartWidget>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto nav">
+                        <Navbar.Brand>Marcas :</Navbar.Brand>
+                            {
+                                section.map((i)=>
+                                <Link className="navLink" to={`/category/${i}`}>{i}</Link>
+                                )
+                            }
+                        </Nav>
+                    </Navbar.Collapse>     
             </Container>
         </Navbar>
     )

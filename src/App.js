@@ -1,22 +1,23 @@
 import './App.css';
-import Tittle from './components/Tittle/Tittle';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes , Route } from "react-router-dom";
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
     <>
-      <div>
-       <NavBar />
-      </div>
-      <div>
-        {/* <Tittle texto={"catalogo"}/>
-        <ItemListContainer /> */}
-        <ItemDetailContainer/>
-      </div>
-
+    <BrowserRouter>
+        <NavBar />
+        <Routes>
+                <Route exact path="/" element={<ItemListContainer/>} />
+                <Route exact path='/category/:mark' element={<ItemListContainer/>}/>
+                <Route exact path='/productos/item/:id' element={<ItemDetailContainer/>}/>
+                <Route exact path='/Cart' element={<Cart/>}/>
+        </Routes>
+    </BrowserRouter>
     </>
   );
 }

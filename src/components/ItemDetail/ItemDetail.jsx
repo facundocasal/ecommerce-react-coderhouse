@@ -1,46 +1,41 @@
 import React from 'react'
-import {Card} from 'react-bootstrap'
+import './itemDetail.css';
+import { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from "react-router-dom";
 
 function ItemDetail({item}) {
+
+
+  let [cart , setCart] = useState(true)
+
+  let onAdd = (num) =>{
+    alert("Se añadieron  " + num + " productos a tu carrito ")
+    setCart(false)
+}
+
   return (
     <>
-        {
-            <div style={{ width: '60%' , height: "80vh", margin:"auto" , display:"flex" ,alignItems: "center" , justifyContent: "center",flexDirection:"column"}}>
-                <div>
-                    <h3 style={{ textAlign: "center" }} > {item.name}</h3>
-                </div>
-                <div style={{display:"flex"}}>
-                    <div>
-                        <img style={{ width:"300px", height:"300px"}} src={item.pictures[0].url} alt="" />
-                    </div>
-                    <div>
-                        <Card.Title>precio $15000.-</Card.Title>
-                        <Card.Title>colores</Card.Title>
-                        <div style={{display:"flex" , width:"60%" , justifyContent:"space-around" }}>
-                            <div>
-                                <a style={{display:"flex", flexDirection:"column" , textDecoration:"none" , color:"black" , textAlign:'center',fontWeight:"600",fontSize: "1.5rem"}} href=" ">
-                                <img style={{ width: '100px',height:"80px"}}  src={item.pickers[1].products[0].thumbnail} alt="" />
-                                 Dorado</a>
-                            </div>
-                            <div >
-                                <a style={{display:"flex", flexDirection:"column" , textDecoration:"none" , color:"black" , textAlign:'center',fontWeight:"600",fontSize: "1.5rem"}} href=" ">
-                                    <img style={{ width: '100px',height:"80px"}} src={item.pickers[1].products[1].thumbnail} alt="" />
-                                Gris </a>
-                            </div>
-                            <div >
-                                <a style={{display:"flex", flexDirection:"column" , textDecoration:"none" , color:"black" , textAlign:'center', fontWeight:600 , fontSize: "1.5rem"}} href=" ">
-                                    <img style={{ width: '100px',height:"80px"}} src={item.pickers[1].products[2].thumbnail} alt="" />
-                                Negro</a>
-                            </div>
-                        </div>
-                        <Card.Title>Descripcion</Card.Title>
-                        <Card.Text>
-                            {item.short_description.content}
-                        </Card.Text>
-                    </div>
-                </div>
-            </div>
-        }
+      <div className='detail'>   
+        <div>
+          <img src={item.img} alt="" />
+        </div>
+        <div className='description'>
+          
+              <h1>Marca Vehiculo: {item.name}</h1>
+              <h2>Modelo:  {item.model}</h2>
+              <h3>Precio: {item.price}</h3>
+                
+                  {item.description.map(i => 
+                  <ul className='description__lista'>
+                    <li>Fabricante:  {i.mark}</li>
+                    <li>Escala:  {i.scale}</li>
+                    <li>Largo:  {i.long}</li>
+                    <li>Material:  {i.material}</li>
+                  </ul>)}
+        </div>
+        {cart?(<ItemCount initial={0} stock={item.stock} onAdd={onAdd} />):<Link className='buttonCart' to={'/Cart'}>Ir al Carrito</Link>}  
+      </div>  
     </>
   )
 }

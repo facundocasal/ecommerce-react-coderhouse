@@ -1,0 +1,24 @@
+.imgItem{
+    width: 250px;
+    height: 250px;
+  
+}
+.Item-title{
+    text-align: center;
+    text-transform: uppercase;
+}
+  
+.buttonBuy{
+    font-size: larger;
+    color: #333;
+    background-color: greenyellow;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-radius: 15px;
+    box-shadow: 2px 2px;
+}
+.buttonBuy:hover{
+    color: #fff;
+    background-color: seagreen
+}
