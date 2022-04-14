@@ -32,7 +32,7 @@ function ItemDetail({item}) {
                 
                   {item.description.map(i => 
                   <ul className='description__lista'>
-                    <li>Fabricante:  {i.mark}</li>
+                    <li>Fabricante:  {i.maker}</li>
                     <li>Escala:  {i.scale}</li>
                     <li>Largo:  {i.long}</li>
                     <li>Material:  {i.material}</li>
