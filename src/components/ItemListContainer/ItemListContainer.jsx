@@ -13,6 +13,7 @@ function ItemListContainer() {
   const {mark} = useParams()
 
   useEffect(()=>{
+      setLoading(true)
       // eslint-disable-next-line no-unused-vars
       let promesa = new Promise ((resolve , reject) =>{
         setTimeout(() => {

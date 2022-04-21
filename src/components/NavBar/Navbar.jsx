@@ -1,4 +1,4 @@
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import {Navbar , Nav , Container} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import './navbar.css';
@@ -11,7 +11,7 @@ export default function NavBar() {
         <Navbar expand="lg" bg="dark"  variant="dark">
             <Container>
                     <Navbar.Brand><Link to={"/"} className="navLink">Inicio</Link></Navbar.Brand>
-                    <CartWidget></CartWidget>
+                    <CartWidget/>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto nav">

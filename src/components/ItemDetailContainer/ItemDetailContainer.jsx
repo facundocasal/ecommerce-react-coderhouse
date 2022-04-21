@@ -16,11 +16,12 @@ function ItemDetailContainer() {
 
 
     useEffect(()=>{
+        setLoading(true)
         // eslint-disable-next-line no-unused-vars
         let promesa = new Promise ((resolve , reject) =>{
           setTimeout(() => {
               // eslint-disable-next-line eqeqeq
-              resolve(inventary.find((element => element.id == id)))
+              resolve(inventary.find((element => element.id === Number(id))))
             
           }, 1000);
         })
