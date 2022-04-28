@@ -1,11 +1,13 @@
-import React, { useContext , useEffect } from 'react'
+import React, { useContext } from 'react'
 import { CartContext } from '../ContextCart/ContexCart'
 import { ImCross } from "react-icons/im";
 import { Link } from 'react-router-dom';
 
 function Cart() {
 
+
   const {cart , buy , totalPrice , removeItemCart } = useContext(CartContext)
+  
 
 
   return (
@@ -33,8 +35,6 @@ function Cart() {
           </div>
       </div>
 
-      
-      
     </>
 
 

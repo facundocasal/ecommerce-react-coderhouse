@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { Spinner } from 'react-bootstrap';
 import inventary from '../../utils/inventary'
+import {doc , getDoc , getFirestore } from 'firebase/firestore'
+
 
 function ItemDetailContainer() {
 
@@ -16,20 +18,16 @@ function ItemDetailContainer() {
 
 
     useEffect(()=>{
-        setLoading(true)
-        // eslint-disable-next-line no-unused-vars
-        let promesa = new Promise ((resolve , reject) =>{
-          setTimeout(() => {
-              // eslint-disable-next-line eqeqeq
-              resolve(inventary.find((element => element.id === Number(id))))
-            
-          }, 1000);
-        })
-        .then(res => setItem(res))
-        .catch(err => console.log("error"))
-        .finally(()=>{
-          setLoading(false)
-        })
+
+      const fire = getFirestore()
+
+      setLoading(true)
+
+      const searchItem = doc(fire , 'productos', id )
+      getDoc(searchItem).then((res)=>{
+        setItem({id: res.id , ...res.data()})
+        setLoading(false)
+      })
     },[id])
 
     
