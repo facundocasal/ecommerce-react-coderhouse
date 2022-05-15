@@ -12,7 +12,7 @@ function Cart() {
       </div>
       <div style={{ width: '100%', padding: "4rem", margin: "auto", display: "flex", flexDirection: "column", alignItems: "center" }}>
         {cart.length > 0 ? (cart.map(i =>
-          <div >
+          <div>
             <h1>Producto Marca: {i.mark}</h1>
             <h2>Producto Modelo: {i.model}</h2>
             <p>Cantida: {i.cant}</p>

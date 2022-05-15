@@ -1,4 +1,5 @@
 import NavBar from './components/NavBar/Navbar';
+import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -21,6 +22,7 @@ function App() {
             <Route exact path='/Cart' element={<Cart />} />
             <Route exact path='/FormCheckOut' element={<FormCheckOut/>}/>
           </Routes>
+          <Footer/>
         </ContexCartProvider>
       </BrowserRouter>
     </>

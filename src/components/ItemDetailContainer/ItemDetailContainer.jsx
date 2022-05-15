@@ -27,7 +27,7 @@ function ItemDetailContainer() {
 
   return (
     <>
-      <div style={{ width: '100%', padding: "4rem", margin: "auto", display: "flex", justifyContent: "center" }}>
+      <div style={{ width: '100%', paddingBottom: "4rem",paddingTop:"0.5rem" , margin: "auto", display: "flex", justifyContent: "center" }}>
         {loading ? (<div style={{ display: "flex", height: "300px", alignItems: "center", flexDirection: "column" }}> <h1> Cargando Detalles Del Producto </h1> <br /> <Spinner animation="grow" /></div>) : (<ItemDetail key={item.id} product={item} />)}
       </div>
     </>
