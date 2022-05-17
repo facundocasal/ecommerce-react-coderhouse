@@ -32,7 +32,7 @@ function ItemListContainer() {
 
   return (
     <>
-      <Tittle texto={"Los Mejores Autos a Escala "} />
+      <Tittle text={"Los Mejores Autos a Escala "} />
       <div style={{ width: '100%', paddingBottom: "4rem",paddingTop:"0.5rem" , margin: "auto", display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
         {loading ? (<div style={{ display: "flex", height: "300px", alignItems: "center", flexDirection: "column" }}> <h1> Cargando Productos  </h1> <Spinner animation="grow" /></div>) : <ItemList products={products}></ItemList>}
       </div>

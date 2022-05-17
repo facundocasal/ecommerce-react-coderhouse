@@ -9,21 +9,21 @@ function ItemCount({ initial, stock, item }) {
     return (
         <div>
             <div className='add'>
-                <button style={{ fontWeight: "600", backgroundColor: "red", color: "wheat", padding: "0.8rem" }} onClick={() => {
+                <button className='Button moreRest' style={{ backgroundColor: "red" }} onClick={() => {
                     if (cant > 0) {
                         setcant(cant - 1)
                     }
                 }}>-</button>
-                 <p style={{ fontWeight: "600", margin: "0 4px", backgroundColor: "darkslategrey", color: "wheat", padding: "0.8rem" }}>{cant}</p>
-                <button style={{ fontWeight: "600", backgroundColor: "green", color: "wheat", padding: "0.8rem" }} onClick={() => {
+                 <p className='Button' style={{ backgroundColor: "darkslategrey" , marginBottom:"0", textAlign: "center", width:"80px" , borderRadius: "15px 5px 15px 5px" }}>{cant}</p>
+                <button className='Button moreRest' style={{ backgroundColor: "green" }} onClick={() => {
                     setcant(cant + 1)
                 }}>+</button>
             </div>
             <div>
             </div>
-            <p style={{ textAlign: "center" }}>stock disponible {stock}</p>
-            <div>
-                <button className="addCart" disabled={cant === 0} onClick={(cant > stock ? null : () => onAdd({ ...item, cant }))}  >Agregar Al Carrito</button>
+            <p style={{ textAlign: "center" }}>stock disponible: {stock}</p>
+            <div style={{margin: "auto",width: "200px"}}>
+                <button className="addCart text-center" disabled={cant === 0} onClick={(cant > stock ? null : () => onAdd({ ...item, cant }))}  >Agregar Al Carrito</button>
             </div>
         </div>
     )

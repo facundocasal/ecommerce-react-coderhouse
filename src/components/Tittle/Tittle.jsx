@@ -1,6 +1,6 @@
-export default function Tittle ({texto}){
+export default function Tittle ({text}){
 
     return(
-        <h1 style={{textAlign:"center"}}> {texto} </h1>
+        <h1 style={{textAlign:"center"}}> {text} </h1>
     )
 }

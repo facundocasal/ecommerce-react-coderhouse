@@ -7,7 +7,8 @@ Input {
     border-radius: 10px;
     padding: 10px 15px;
     font-size: 14px;
-    margin: 0px auto 10px  auto;
+    margin: 10px auto 10px  auto;
+    font-weight: 600;
 }
 input[type="submit"] {
     background: #4d8d31;
@@ -19,7 +20,50 @@ input[type="submit"] {
     font-size: 16px;
     font-weight:600;
     letter-spacing: 10px;
+    box-shadow:#333 1px 1px 10px;
 }
 input[type="submit"]:hover{
     background: #244318;
+}
+.sad{
+    margin: 2rem auto ;
+    font-size: 8rem;
+    background-color: #333;
+    border-radius: 100%;
+    padding: 2rem;
+    color: wheat;
+    font-weight: 600;
+}
+.cartEmpty{
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 5px 20px 5px 20px;
+    width: 200px;
+    margin: 1.5rem auto;
+    background-color: aqua;
+    box-shadow:#333 1px 1px 10px;
+    text-align: center;
+    color: #333;
+}
+.total{
+    border-radius: 6px 25px;
+    border: 2px solid;
+    width: 300px;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    font-weight: 800;
+    background: darkorange;
+}
+
+@media screen and (max-width: 800px){
+    Input {
+    width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    Input {
+    width: 80%;
+    }
 }

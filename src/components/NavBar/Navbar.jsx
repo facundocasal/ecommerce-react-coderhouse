@@ -18,7 +18,7 @@ export default function NavBar() {
                         <Navbar.Brand>Marcas :</Navbar.Brand>
                         {
                             section.map((i) =>
-                                <Link className="navLink" to={`/category/${i}`}>{i}</Link>
+                                <Link key={i} className="navLink" to={`/category/${i}`}>{i}</Link>
                             )
                         }
                     </Nav>

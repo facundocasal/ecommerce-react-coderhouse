@@ -1,6 +1,19 @@
-.show{
+.showCart{
     display: block;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 600;
+    right: 0;
+    background-color: #3fa3a5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: wheat 1px 1px 10px;
+    margin-top: -1rem;
+    color: #333;
 }
-.noshow{
+.showCart:hover{
+    background-color: #2c7172;
+}
+.noshowCart{
     display: none;
 }

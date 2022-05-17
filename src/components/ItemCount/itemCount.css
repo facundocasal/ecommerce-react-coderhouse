@@ -1,15 +1,28 @@
 .add{
     display: flex;
     justify-content: space-around;
+    margin: auto;
+    width: 150px
+}
+.Button{
+    height: 40px;
+    font-Weight: 600;
+    color: wheat;
+    padding: 0.4rem;
+}
+.moreRest{
+    width: 30px;
+    border-radius: 5px 10px 5px 10px;
 }
 .addCart{
-    padding: 0.5rem 1rem;
+    padding: 0.2rem;
     border-radius: 10px;
     box-shadow: 4px 4px #333;
     background-color: rgb(65, 227, 227);
     color: #333;
     font-size: large;
     font-weight: 600;
+    width: 200px;
 }
 .addCart:disabled{
     background-color: dimgray;
