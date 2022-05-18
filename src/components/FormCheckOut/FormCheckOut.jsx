@@ -1,20 +1,22 @@
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { CartContext } from '../ContexCart';
-import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/firestore';
+import { addDoc, doc, getDoc , updateDoc , collection, getFirestore, serverTimestamp } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import "./FormCheckOut.css"
 import Tittle from '../Tittle/Tittle';
 import { Table } from 'react-bootstrap';
-import { FaRegSadTear } from "react-icons/fa";
+import { Spinner } from 'react-bootstrap';
 
 
 function FormCheckOut() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const { cart, totalPrice, buy } = useContext(CartContext)
   const [orderId, setOrderId] = useState("")
+  const [loading, setLoading] = useState(false)
 
   function sendBuyer(data) {
+    setLoading(true);
     const order = {
       buyer: data,
       items: cart,
@@ -26,7 +28,18 @@ function FormCheckOut() {
 
     const orders = collection(db, 'ventas');
 
+    cart.forEach((prod) => {
+      const prodRef = doc(db, "productos", prod.id);
+
+      getDoc(prodRef).then((res) => {
+          updateDoc(prodRef, {
+              "stock": res.data().stock - prod.cant
+          })
+      })
+  })
+
     addDoc(orders, order).then(({ id }) => {
+      setLoading(false)
       buy()
       setOrderId(id)
     })
@@ -35,6 +48,7 @@ function FormCheckOut() {
 
   return (
     <div style={{ paddingBottom: "4rem" }}>
+      {cart.length > 0 ? (
       <div>
         <Tittle text={"Revisa tu compra antes de Finalizar"} />
         <Table style={{ width: "70%", margin: "1rem auto", textAlign: "center", fontWeight: "600" }} responsive striped bordered hover>
@@ -58,8 +72,6 @@ function FormCheckOut() {
             </tr>)}
           </tbody>
         </Table>
-      </div>
-      {cart ? (
         <form onSubmit={handleSubmit(sendBuyer)}>
           <h3 style={{ textAlign: "center", margin:"0", fontWeight: "600" }}>Completa el siguiente formulario para finalizar</h3>
           <input type="text" name="name" placeholder="Nombre"{...register("name", { required: true, minLength: 3, maxLength: 25, pattern: /[A-Za-z]/ })} />
@@ -77,17 +89,17 @@ function FormCheckOut() {
           {errors.phone?.type === 'pattern' && <p style={{ textAlign: "center", color: "red", fontWeight: "600" }}>debe contener solo numeros </p>}
 
           <p className='total' style={{ textAlign: "center" }}> Total a Pagar: $ {totalPrice}</p>
-          <input type="submit" value="Comprar" ></input>
-        </form>)
+          <input type="submit" value="Comprar"></input>
+          {loading &&<div style={{ display: "flex", height: "300px", alignItems: "center", flexDirection: "column" }}><Spinner animation="grow" /></div>}
+        </form>
+      </div>)
         :
-        <div className='d-flex flex-column'>
-          <Tittle text={"Carrito Vacio ..."} />
-          <FaRegSadTear className='sad' />
-          <Link className='cartEmpty' to={"/"} style={{ textDecoration: "none", color: "#333" }}>Ir a Comprar</Link>
-        </div>}
-      <div>
-        {orderId === "" ? "" : (<p> Su Codigo de compra es : {orderId}</p>)}
-      </div>
+          <div className='d-flex flex-column'>
+            <Tittle text={"Gracias por su compra"}/>
+            <p style={{textAlign:"center"}}> su ID de compra es : {orderId}</p>
+            <Link className='cartEmpty' to={"/"} style={{ textDecoration: "none", color: "#333" }}>Volver al Inicio</Link>
+          </div> 
+        }
     </div>
 
   )

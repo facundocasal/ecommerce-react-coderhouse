@@ -1,4 +1,4 @@
-# Ecomerce React
+# firebase deployReact E-commerce
 ### Autor
 [Facundo Nahuel Casal](https://github.com/facundocasal)
 
@@ -10,12 +10,12 @@ proyecto final del curso de Reactjs se puede interartuar con el proyecto en el s
 
 ## librerias utilizadas
 
--Boostrap-React para estilos del sitio, lo use por que me facilita mucho el estar programando los estilos 
--sweetalert para los alert en distintas partes del sitio, lo use por que creo que le da toques distintos al sitio
--firebase para la base de datos 
--reacticon para los iconos del sitio  
--react-router-dom para el ruteo del sitio 
--react-hook-form para el formulario final creo que es una forma rapida ,  agil y sencilla de implementar un formulario en un proyecto 
+- **Boostrap-React** para estilos del sitio, lo use por que me facilita mucho el estar programando los estilos 
+- **sweetalert** para los alert en distintas partes del sitio, lo use por que creo que le da toques distintos al sitio
+- **firebase** para la base de datos 
+- **reacticon** para los iconos del sitio  
+- **react-router-dom** para el ruteo del sitio 
+- **react-hook-form** para el formulario final creo que es una forma rapida ,  agil y sencilla de implementar un formulario en un proyecto 
 
 
 ### Cómo instanciar el proyecto de manera local
@@ -28,5 +28,14 @@ npm install
 Iniciar en servidor local
 ``` bash
 npm start
-```
 http://localhost:3000
+```
+
+### Objetivos principales del proyecto
+- **Obtener productos de una base de datos**
+- Poder comprar productos y enviar la información a la base de datos
+- Actualizar el stock en la base de datos
+- Mostrar categorías desde la base de datos
+- Poder navegar entre categorías y mostrar los productos de la seleccionada
+- Agregar y quitar productos del carrito, seleccionando la cantidad deseada
+- Vaciar el carrito

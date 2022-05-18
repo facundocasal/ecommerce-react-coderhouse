@@ -37,15 +37,6 @@ function ContexCartProvider({ children }) {
 
   }
   function buy() {
-    Swal.fire({
-      title: 'GRACIAS por TU COMPRA ',
-      showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      }
-    })
     setCart([])
   }
 

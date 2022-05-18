@@ -16,7 +16,7 @@
 }
 .addCart{
     padding: 0.2rem;
-    border-radius: 10px;
+    border-radius: 5px 20px 5px 20px;
     box-shadow: 4px 4px #333;
     background-color: rgb(65, 227, 227);
     color: #333;
