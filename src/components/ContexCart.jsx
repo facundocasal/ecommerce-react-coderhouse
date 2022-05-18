@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useState, useEffect } from 'react'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 export const CartContext = createContext()
 
@@ -26,12 +27,28 @@ function ContexCartProvider({ children }) {
     } else {
       setCart([...cart, item])
     }
-    alert("Producto agregado al carrito")
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title:'Has agregado '+ item.cant +' productos al carrito' ,
+      showConfirmButton: false,
+      timer: 1000
+    })
+
   }
   function buy() {
-    alert("gracias por su compra")
+    Swal.fire({
+      title: 'GRACIAS por TU COMPRA ',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
     setCart([])
   }
+
   function removeItemCart(id) {
     setCart(cart.filter((plant) => plant.id !== id))
   }

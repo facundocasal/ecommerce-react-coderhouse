@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar/Navbar';
 import Footer from './components/Footer/Footer';
+import 'sweetalert2/dist/sweetalert2.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';

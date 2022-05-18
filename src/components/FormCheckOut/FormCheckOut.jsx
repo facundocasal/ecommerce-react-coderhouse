@@ -59,7 +59,7 @@ function FormCheckOut() {
           </tbody>
         </Table>
       </div>
-      {cart.length > 0 ? (
+      {cart ? (
         <form onSubmit={handleSubmit(sendBuyer)}>
           <h3 style={{ textAlign: "center", margin:"0", fontWeight: "600" }}>Completa el siguiente formulario para finalizar</h3>
           <input type="text" name="name" placeholder="Nombre"{...register("name", { required: true, minLength: 3, maxLength: 25, pattern: /[A-Za-z]/ })} />
