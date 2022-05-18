@@ -2,11 +2,8 @@ import React from 'react'
 import './itemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from "react-router-dom";
-import { useState } from 'react'
 
 function ItemDetail({ product }) {
-
-  const [stock, setStock] = useState(product.stock)
 
   return (
     <>
@@ -27,8 +24,8 @@ function ItemDetail({ product }) {
               </div>
               <h3>Precio: $ {product.price}</h3>
             </div>
-              <ItemCount className="addCart" initial={0} stock={stock} key={product.id} item={product} />
-              <Link className='buttonCart text-center fw-bold' to={'/Cart'}>Ir al Carrito</Link>
+            <ItemCount className="addCart" initial={0} stock={product.stock} key={product.id} item={product} />
+            <Link className='buttonCart text-center fw-bold' to={'/Cart'}>Ir al Carrito</Link>
           </div>
         </div>
       </div>

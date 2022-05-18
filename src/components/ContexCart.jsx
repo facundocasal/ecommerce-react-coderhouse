@@ -18,6 +18,7 @@ function ContexCartProvider({ children }) {
     calcTotal()
   }, [cart])
 
+  // funcion que agrega los productos al carrito 
   function onAdd(item) {
     let productRepit = cart.findIndex(i => i.id === item.id)
     if (productRepit !== -1) {
@@ -30,16 +31,17 @@ function ContexCartProvider({ children }) {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title:'Has agregado '+ item.cant +' productos al carrito' ,
+      title: 'Has agregado ' + item.cant + ' productos al carrito',
       showConfirmButton: false,
       timer: 1000
     })
 
   }
+  //funcion al finalizar la compra 
   function buy() {
     setCart([])
   }
-
+  // funcion para remover el item del carrito 
   function removeItemCart(id) {
     setCart(cart.filter((plant) => plant.id !== id))
   }

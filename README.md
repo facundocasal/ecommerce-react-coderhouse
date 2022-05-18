@@ -6,7 +6,7 @@ proyecto final del curso de Reactjs se puede interartuar con el proyecto en el s
 
 ## GIF (pequeña demostracion del sitio )
 
-![](demo.gif)
+![](miTienda.gif)
 
 ## librerias utilizadas
 
@@ -32,10 +32,13 @@ http://localhost:3000
 ```
 
 ### Objetivos principales del proyecto
-- **Obtener productos de una base de datos**
-- Poder comprar productos y enviar la información a la base de datos
-- Actualizar el stock en la base de datos
-- Mostrar categorías desde la base de datos
-- Poder navegar entre categorías y mostrar los productos de la seleccionada
-- Agregar y quitar productos del carrito, seleccionando la cantidad deseada
-- Vaciar el carrito
+- **Utilizar una base de datos para obtener los productos**
+- **Poder agregar esos productos a un carrito con todos sus elementos**
+- **Actualizar la base de datos depues de la compra del usuario**
+- **navegar entre  las distintas categorías**
+- **Agregar y quitar productos del carrito**
+- **Vaciar el carrito**
+- **navegacion optimizada en todo el sitio**
+
+
+## Gracias

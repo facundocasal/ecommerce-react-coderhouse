@@ -11,6 +11,7 @@ function Cart() {
   const { cart, totalPrice, removeItemCart } = useContext(CartContext)
   return (
     <>
+    {/* mostramos los productos agregados al carrito pero sin la posibilidad de eliminarlos y nos muestra el formulario para finalizar la compra  */}
       {cart.length > 0 ?
         (<div className='d-flex flex-column' style={{ paddingBottom: "4rem", }}>
           <Tittle text={"Carrito"} />
@@ -28,7 +29,7 @@ function Cart() {
               {cart.map(i =>
                 <tr key={i.id}>
                   <td># {cart.indexOf(i) + 1}</td>
-                  <td><img style={{width:"50px" , height:"40px"}} src={i.img} alt="" /> {i.mark} {i.model}</td>
+                  <td><img style={{ width: "50px", height: "40px" }} src={i.img} alt="" /> {i.mark} {i.model}</td>
                   <td>{i.cant}</td>
                   <td><button className='deleteButton' onClick={() => removeItemCart(i.id)}><ImCross /></button></td>
                   <td>${i.price}</td>
@@ -42,6 +43,7 @@ function Cart() {
           </Table>
           <Link className='buy' to={"/FormCheckOut"} style={{ textDecoration: "none", color: "#fff" }}>Finalizar Compra </Link>
         </div>) :
+        // muestra el id de compra con un mensaje final y un link al inicio
         <div className='d-flex flex-column'>
           <Tittle text={"Carrito Vacio ..."} />
           <FaRegSadTear className='sad' />

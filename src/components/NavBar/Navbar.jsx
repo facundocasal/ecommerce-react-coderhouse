@@ -10,7 +10,7 @@ export default function NavBar() {
     return (
         <Navbar expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand><Link to={"/"} className="navLink align-items-center">Inicio</Link></Navbar.Brand>
+                <Navbar.Brand><Link to={"/"} className="navLink align-items-center">MiniCart</Link></Navbar.Brand>
                 <CartWidget />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
