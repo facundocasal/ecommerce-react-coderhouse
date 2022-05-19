@@ -1,9 +1,9 @@
-import React from 'react'
 import './itemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from "react-router-dom";
 
 function ItemDetail({ product }) {
+
 
   return (
     <>
